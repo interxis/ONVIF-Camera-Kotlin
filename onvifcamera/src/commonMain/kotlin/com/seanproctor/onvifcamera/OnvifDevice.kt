@@ -63,7 +63,11 @@ public class OnvifDevice internal constructor(
     }
 
     private fun getEndpointForRequest(requestType: OnvifRequestType): String {
-        return namespaceMap[requestType.namespace()] ?: throw OnvifServiceUnavailable()
+        var endpoint = namespaceMap[requestType.namespace()]
+        if (endpoint.isNullOrEmpty()) {
+            endpoint = namespaceMap[namespaceMap.keys.first()]
+        }
+        return endpoint?:throw OnvifServiceUnavailable()
     }
 
     public companion object {

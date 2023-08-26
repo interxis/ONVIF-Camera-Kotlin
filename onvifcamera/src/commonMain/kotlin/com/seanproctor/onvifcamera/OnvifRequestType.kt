@@ -7,6 +7,7 @@ internal enum class OnvifRequestType {
 
     GetServices,
     GetDeviceInformation,
+    GetEvents,
     GetProfiles,
     GetStreamURI,
     GetSnapshotURI;
@@ -14,6 +15,7 @@ internal enum class OnvifRequestType {
     fun namespace(): String =
         when (this) {
             GetServices, GetDeviceInformation -> "http://www.onvif.org/ver10/device/wsdl"
+            GetEvents -> "http://www.onvif.org/ver10/events/wsdl"
             GetProfiles, GetStreamURI, GetSnapshotURI -> "http://www.onvif.org/ver20/media/wsdl"
         }
 }
