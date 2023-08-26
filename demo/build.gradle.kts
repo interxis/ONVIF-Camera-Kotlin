@@ -13,10 +13,10 @@ kotlin {
             dependencies {
                 implementation(project(":onvifcamera"))
 
-                implementation("io.ktor:ktor-client-core:_")
-                implementation("io.ktor:ktor-client-cio:_")
-                implementation("io.ktor:ktor-client-auth:_")
-                implementation("io.ktor:ktor-client-logging:_")
+                implementation("io.ktor:ktor-client-core:2.3.3")
+                implementation("io.ktor:ktor-client-cio:2.3.3")
+                implementation("io.ktor:ktor-client-auth:2.3.3")
+                implementation("io.ktor:ktor-client-logging:2.3.3")
 
                 // Compose dependencies
                 implementation(compose.runtime)
@@ -24,22 +24,22 @@ kotlin {
                 implementation(compose.material)
 
                 // MOKO ModelView
-                api("dev.icerock.moko:mvvm-core:_")
-                api("dev.icerock.moko:mvvm-flow:_")
+                api("dev.icerock.moko:mvvm-core:0.16.1")
+                api("dev.icerock.moko:mvvm-flow:0.16.1")
 
                 // Logging
-                implementation("io.github.aakira:napier:_")
+                implementation("io.github.aakira:napier:2.6.1")
 
                 // SSDP
-                implementation("com.seanproctor:lighthouse:_")
+                implementation("com.seanproctor:lighthouse:0.2.0")
             }
         }
         val androidMain by getting {
             dependencies {
                 // Android presentation components
-                implementation(AndroidX.activity.compose)
-                implementation("androidx.lifecycle:lifecycle-viewmodel-compose:_")
-                implementation("dev.icerock.moko:mvvm-flow-compose:_")
+                implementation("androidx.activity:activity-compose:1.7.2")
+                implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
+                implementation("dev.icerock.moko:mvvm-flow-compose:0.16.1")
             }
         }
         val jvmMain by getting {
@@ -52,11 +52,11 @@ kotlin {
 
 android {
     namespace = "com.seanproctor.onvifdemo"
-    compileSdk = 33
+    compileSdk = 34
     defaultConfig {
         applicationId = "com.seanproctor.onvifdemo"
         minSdk = 21
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
     }

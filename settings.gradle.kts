@@ -10,8 +10,11 @@ pluginManagement {
 }
 
 plugins {
-    // See https://jmfayard.github.io/refreshVersions
-    id("de.fayard.refreshVersions") version "0.51.0"
+    kotlin("plugin.serialization") version "1.9.0" apply false
+    id("com.android.application") version "8.1.0" apply false
+    id("org.jetbrains.kotlin.android") version "1.9.0" apply false
+    id("org.jetbrains.compose") version "1.4.3" apply false
+    id("com.vanniktech.maven.publish.base") version "0.25.3" apply false
 }
 
 include(":onvifcamera")

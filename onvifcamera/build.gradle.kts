@@ -20,19 +20,18 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                api(KotlinX.coroutines.core)
+                implementation("io.github.pdvrieze.xmlutil:serialization:0.86.1")
+                implementation("io.github.pdvrieze.xmlutil:serialutil:0.86.1")
 
-                implementation("io.github.pdvrieze.xmlutil:serialization:_")
-                implementation("io.github.pdvrieze.xmlutil:serialutil:_")
-
-                implementation("io.ktor:ktor-client-core:_")
-                implementation("io.ktor:ktor-client-auth:_")
-                implementation("io.ktor:ktor-client-logging:_")
-                implementation("org.slf4j:slf4j-api:_")
-                implementation("io.ktor:ktor-network:_")
+                implementation("io.ktor:ktor-client-core:2.3.3")
+                implementation("io.ktor:ktor-client-auth:2.3.3")
+                implementation("io.ktor:ktor-client-logging:2.3.3")
+                implementation("org.slf4j:slf4j-api:2.0.7")
+                implementation("io.ktor:ktor-network:2.3.3")
                 implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.5")
+                implementation("org.jetbrains.kotlinx:atomicfu:0.21.0")
 
-                implementation("com.benasher44:uuid:_")
+                implementation("com.benasher44:uuid:0.7.0")
             }
         }
 
@@ -45,7 +44,7 @@ kotlin {
 }
 
 android {
-    compileSdk = 33
+    compileSdk = 34
 
     namespace = "com.seanproctor.onvifcamera"
 
