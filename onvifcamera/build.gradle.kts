@@ -5,7 +5,7 @@ plugins {
     id("com.vanniktech.maven.publish.base")
 }
 
-group = "com.seanproctor"
+group = "com.interxis"
 version = "1.8.2"
 
 kotlin {
@@ -46,7 +46,7 @@ kotlin {
 android {
     compileSdk = 34
 
-    namespace = "com.seanproctor.onvifcamera"
+    namespace = "com.interxis.onvifcamera"
 
     defaultConfig {
         minSdk = 21

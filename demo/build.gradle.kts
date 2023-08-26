@@ -51,10 +51,10 @@ kotlin {
 }
 
 android {
-    namespace = "com.seanproctor.onvifdemo"
+    namespace = "com.interxis.onvifdemo"
     compileSdk = 34
     defaultConfig {
-        applicationId = "com.seanproctor.onvifdemo"
+        applicationId = "com.interxis.onvifdemo"
         minSdk = 21
         targetSdk = 34
         versionCode = 1
@@ -77,7 +77,7 @@ android {
 compose {
     desktop {
         application {
-            mainClass = "com.seanproctor.onvifdemo.MainKt"
+            mainClass = "com.interxis.onvifdemo.MainKt"
         }
     }
 }

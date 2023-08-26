@@ -39,22 +39,22 @@ allprojects {
             pom {
                 name.set("ONVIF Camera Kotlin")
                 description.set("A Kotlin library to interact with ONVIF cameras.")
-                url.set("https://github.com/sproctor/ONVIF-Camera-Kotlin/")
+                url.set("https://github.com/interxis/ONVIF-Camera-Kotlin/")
                 licenses {
                     license {
                         name.set("MIT")
-                        url.set("https://github.com/sproctor/ONVIFCameraAndroid/blob/master/LICENSE")
+                        url.set("https://github.com/interxis/ONVIF-Camera-Kotlin/blob/master/LICENSE")
                     }
                 }
                 developers {
                     developer {
-                        id.set("sproctor")
-                        name.set("Sean Proctor")
-                        email.set("sproctor@gmail.com")
+                        id.set("interxis")
+                        name.set("Alexis Martin")
+                        email.set("interxis@gmail.com")
                     }
                 }
                 scm {
-                    url.set("https://github.com/sproctor/ONVIF-Camera-Kotlin/tree/master")
+                    url.set("https://github.com/interxis/ONVIF-Camera-Kotlin/tree/master")
                 }
             }
         }
