@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.util.suffixIfNot
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
@@ -5,8 +6,71 @@ plugins {
     id("com.vanniktech.maven.publish.base")
 }
 
-group = "com.interxis"
-version = "1.8.2"
+/**
+ * Sets version inside the gradle.properties file
+ * Usage: ./gradlew setVersion -P version=1.0.0
+ */
+tasks.register("setVersion") {
+    doLast {
+        tasks.create<JavaExec>("setVersionExec") {
+            val backupFile = rootProject.file("gradle.properties.bak")
+            backupFile.delete()
+            val propsFile = rootProject.file("gradle.properties")
+            propsFile.renameTo(backupFile)
+
+            var version = rootProject.version as String
+            version = version.removeSuffix("-SNAPSHOT")
+            propsFile.printWriter().use {
+                var versionApplied = false
+                backupFile.readLines()
+                    .forEach { line ->
+                        if (line.matches(Regex("version\\s*=.*"))) {
+                            versionApplied = true
+                            it.println("version = $version")
+                        } else {
+                            it.println(line)
+                        }
+                    }
+                if (!versionApplied) {
+                    it.println("version = $version")
+                }
+            }
+
+            println("Setting new version for ${rootProject.name} to $version")
+        }
+    }
+}
+
+
+tasks.register("setSnapshot") {
+    doLast {
+        tasks.create<JavaExec>("setSnapshotExec") {
+            val backupFile = rootProject.file("gradle.properties.bak")
+            backupFile.delete()
+            val propsFile = rootProject.file("gradle.properties")
+            propsFile.renameTo(backupFile)
+
+            var version = rootProject.version as String
+            version = version.suffixIfNot("-SNAPSHOT")
+            propsFile.printWriter().use {
+                var versionApplied = false
+                backupFile.readLines()
+                    .forEach { line ->
+                        if (line.matches(Regex("version\\s*=.*"))) {
+                            versionApplied = true
+                            it.println("version = $version")
+                        } else {
+                            it.println(line)
+                        }
+                    }
+                if (!versionApplied) {
+                    it.println("version = $version")
+                }
+            }
+            println("Setting new version for ${rootProject.name} to $version")
+        }
+    }
+}
 
 kotlin {
     androidTarget {
@@ -67,4 +131,5 @@ configure<com.vanniktech.maven.publish.MavenPublishBaseExtension> {
     configure(
         com.vanniktech.maven.publish.KotlinMultiplatform(javadocJar = com.vanniktech.maven.publish.JavadocJar.Empty())
     )
+    coordinates("io.github.interxis", "onvifcamera", "$version-SNAPSHOT")
 }

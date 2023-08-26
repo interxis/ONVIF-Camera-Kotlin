@@ -55,6 +55,8 @@ allprojects {
                 }
                 scm {
                     url.set("https://github.com/interxis/ONVIF-Camera-Kotlin/tree/master")
+                    connection.set("scm:git:git://github.com/interxis/ONVIF-Camera-Kotlin.git")
+                    developerConnection.set("scm:git:ssh://git@github.com/interxis/ONVIF-Camera-Kotlin.git")
                 }
             }
         }
