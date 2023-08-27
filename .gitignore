@@ -82,3 +82,5 @@ app/release/*
 **/*.hprof
 .idea/assetWizardSettings.xml
 .idea/aws.xml
+.idea/sonarlint/
+gradle.properties.bak
