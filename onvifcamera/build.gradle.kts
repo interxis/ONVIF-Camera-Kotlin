@@ -94,7 +94,7 @@ kotlin {
                 implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.5")
                 implementation("org.jetbrains.kotlinx:atomicfu:0.21.0")
 
-                implementation("com.benasher44:uuid:0.7.0")
+                implementation("com.benasher44:uuid:0.8.1")
             }
         }
 
