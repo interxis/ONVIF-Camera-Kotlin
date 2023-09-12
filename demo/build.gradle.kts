@@ -14,7 +14,7 @@ kotlin {
                 implementation(project(":onvifcamera"))
 
                 implementation("io.ktor:ktor-client-core:2.3.3")
-                implementation("io.ktor:ktor-client-cio:2.3.3")
+                implementation("io.ktor:ktor-client-cio:2.3.4")
                 implementation("io.ktor:ktor-client-auth:2.3.4")
                 implementation("io.ktor:ktor-client-logging:2.3.3")
 
