@@ -15,6 +15,7 @@ plugins {
     id("org.jetbrains.kotlin.android") version "1.9.0" apply false
     id("org.jetbrains.compose") version "1.4.3" apply false
     id("com.vanniktech.maven.publish.base") version "0.25.3" apply false
+    id("org.sonarqube") version "4.3.1.3277" apply false
 }
 
 include(":onvifcamera")

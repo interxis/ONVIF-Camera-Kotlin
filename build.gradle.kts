@@ -1,6 +1,9 @@
 import com.vanniktech.maven.publish.MavenPublishBaseExtension
 import com.vanniktech.maven.publish.SonatypeHost
 
+///////////////////////////////////////////////////////////////////////////////
+//  GRADLE CONFIGURATION
+///////////////////////////////////////////////////////////////////////////////
 plugins {
     kotlin("jvm") apply false
     kotlin("multiplatform") apply false
@@ -10,8 +13,12 @@ plugins {
     id("com.android.library") apply false
     id("org.jetbrains.compose") apply false
     id("com.vanniktech.maven.publish.base") apply false
+    id("org.sonarqube")
 }
 
+///////////////////////////////////////////////////////////////////////////////
+//  APP CONFIGURATION
+///////////////////////////////////////////////////////////////////////////////
 allprojects {
     repositories {
         mavenLocal()
@@ -59,6 +66,19 @@ allprojects {
                     developerConnection.set("scm:git:ssh://git@github.com/interxis/ONVIF-Camera-Kotlin.git")
                 }
             }
+        }
+    }
+}
+
+///////////////////////////////////////////////////////////////////////////////
+//  TASKS CONFIGURATION
+///////////////////////////////////////////////////////////////////////////////
+tasks {
+    sonar {
+        properties {
+            property("sonar.projectKey", "interxis_ONVIF-Camera-Kotlin")
+            property("sonar.organization", "interxis")
+            property("sonar.host.url", "https://sonarcloud.io")
         }
     }
 }
