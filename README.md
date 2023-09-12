@@ -6,7 +6,7 @@ Kotlin MPP.
 Install with Gradle (must have mavenCentral in repositories):
 
 ```kotlin
-implementation("com.interxis.onvifcamera:1.5.0")
+implementation("com.interxis.onvifcamera:1.8.2")
 ```
 
 ## Connect to an Onvif camera and information
