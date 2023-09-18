@@ -86,7 +86,7 @@ kotlin {
                 implementation("io.github.pdvrieze.xmlutil:serialization:0.86.1")
                 implementation("io.github.pdvrieze.xmlutil:serialutil:0.86.1")
 
-                implementation("io.ktor:ktor-client-core:2.3.3")
+                implementation("io.ktor:ktor-client-core:2.3.4")
                 implementation("io.ktor:ktor-client-auth:2.3.4")
                 implementation("io.ktor:ktor-client-logging:2.3.4")
                 implementation("org.slf4j:slf4j-api:2.0.7")
